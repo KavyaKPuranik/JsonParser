@@ -11,7 +11,7 @@ Then run the run the Parser class.
 Working of the program:
 
 To parse the JSON, the Program uses the following grammar:
-/*
+
  * Start 	-> { Element }
 			| { }	
  * Element 	-> " AlphaNum " : Value
@@ -23,9 +23,9 @@ To parse the JSON, the Program uses the following grammar:
  			| { Element }
  			| [ Array ]
  			| Constant 
- * AlphaNum -> <String>
- * Constant	-> true | false | null | <Number>	
- */
+ * AlphaNum -> STRINGS
+ * Constant	-> true | false | null | NUMBERS
+ 
 
 The program starts with the Parser class. 
 
