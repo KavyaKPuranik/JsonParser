@@ -13,19 +13,18 @@ Working of the program:
 To parse the JSON, the Program uses the following grammar:
 /*
  * Start 	-> { Element }
- * 			-> { }	
+			-> { }	
  * Element 	-> " AlphaNum " : Value
- * 			-> " AlphaNum " : Value , Element
+ 			-> " AlphaNum " : Value , Element
  * Array 	-> Value
- * 			-> Value (, Value)*
- * 			-> e
+ 			-> Value (, Value)*
+  			-> e
  * Value 	-> " AlphaNum "
- * 			-> { Element }
- * 			-> [ Array ]
- * 			-> Constant 
+ 			-> { Element }
+ 			-> [ Array ]
+ 			-> Constant 
  * AlphaNum -> <String>
  * Constant	-> true / false / null / <Number>	
- * 
  */
 
 The program starts with the Parser class. 
