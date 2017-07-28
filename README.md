@@ -14,22 +14,16 @@ To parse the JSON, the Program uses the following grammar:
 /*
  * Start 	-> { Element }
  * 			-> { }	
- * 
  * Element 	-> " AlphaNum " : Value
  * 			-> " AlphaNum " : Value , Element
- * 
  * Array 	-> Value
  * 			-> Value (, Value)*
  * 			-> e
- * 
  * Value 	-> " AlphaNum "
  * 			-> { Element }
  * 			-> [ Array ]
  * 			-> Constant 
- * 
- *
  * AlphaNum -> <String>
- * 
  * Constant	-> true / false / null / <Number>	
  * 
  */
@@ -38,22 +32,29 @@ The program starts with the Parser class.
 
 Description of each of the classes is as follows:
 Parser:	main		 -> Reads JSON string from file and calls start method for validation.
+
 ParserException:	 -> At any point of time in the program, if the JSON is invalid, a new object of this class is thrown along with an appropriate erroer message.
+
 Start:	matchStart	 -> Returns index (int)
 			 -> Accepts Parameters jsonString and index
 			 -> Validates the start and calls appropriate methods.
+
 Element:matchElement	 -> Returns index (int)
 			 -> Accepts Parameters jsonString and index
 			 -> Validates the element and calls appropriate methods.
+
 Array:	matchArray	 -> Returns index (int)
 			 -> Accepts Parameters jsonString and index
 			 -> Validates the Array and calls appropriate methods.
+
 Value:	matchValue	 -> Returns index (int)
 			 -> Accepts Parameters jsonString and index
 			 -> Validates the Value and calls appropriate methods.
+
 Terminal:matchAlphaNum	 -> Returns index (int)
 			 -> Accepts Parameters jsonString and index
 			 -> Validates the both Terminal conditions that are key as well as value (any string) and calls appropriate methods.
+
 Terminal:matchConstant	 -> Returns index (int)
 			 -> Accepts Parameters jsonString and index
 			 -> Validates the remaining terminals that are null,true,false and numbers and then calls appropriate methods.
